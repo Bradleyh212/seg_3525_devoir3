@@ -37,7 +37,9 @@ const makeDeck = (nPairs) => {
 
 export default function Game() {
   const [level, setLevel] = useState('easy');
+  const [category, setCategory] = useState('shapes');
   const [cards, setCards] = useState(() => makeDeck(8));
+  const isWon = cards.every(c => c.isMatched);
   const [first, setFirst] = useState(null);
   const [second, setSecond] = useState(null);
   const [busy, setBusy] = useState(false);
@@ -127,6 +129,15 @@ export default function Game() {
           <option value="easy">Easy</option>
           <option value="hard">Hard</option>
         </select>
+        {/* Category selector */}
+        <select
+          className="level-select"
+          value={category}
+          onChange={e => setCategory(e.target.value)}
+        >
+          <option value="shapes">Shapes</option>
+          <option value="numbers">Numbers</option>
+        </select>
         {/* Help button */}
         <button className="help-button" onClick={() => setShowHelp(true)}>
           HELP
@@ -143,11 +154,14 @@ export default function Game() {
             onClick={() => handleClick(card)}
           >
             <div className="face back"> 
-                <img
-                    src={ALL_IMAGES[card.value - 1]}
-                    alt={`card ${card.value}`}
+                {category === 'shapes'
+                ? <img
+                    src={ALL_IMAGES[card.value-1]}
+                    alt={`shape ${card.value}`}
                     className="card-img"
-                />
+                  />
+                : <span className="card-number">{card.value}</span>
+              }
             </div>
             <div className="face front" />
           </div>
@@ -157,6 +171,14 @@ export default function Game() {
       <button className="restart-button" onClick={resetGame}>
         Restart
       </button>
+      {isWon && (
+        <div className="help-modal">           
+          <div className="help-box">
+            <h3>🎉 Congrats, you won! 🎉</h3>
+            <button onClick={resetGame}>Play Again</button>
+          </div>
+       </div>
+      )}
 
       {showHelp && (
         <div className="help-modal">

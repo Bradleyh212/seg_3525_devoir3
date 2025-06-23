@@ -8,6 +8,9 @@ function App() {
   if (!started) {
     return (
       <div className="home">
+        <div className="home_header">
+        <h1 className="home_logo">Flip Frenzy</h1>
+    </div> 
         <h1 className="home__title">Memory game</h1>
         <p className="home__subtitle">Find the pairs!</p>
         <button

@@ -38,12 +38,16 @@
   opacity: 0.9;
 }
 
-/* Placeholder for when the game starts: center it too */
-.game-placeholder {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #444;
-  font-size: 1.25rem;
+.home_header {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
 }
+
+.home_logo {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 2rem;
+    color: #222;
+    margin: 0;
+}
+
