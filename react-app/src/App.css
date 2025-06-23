@@ -1,0 +1,49 @@
+/* Make the home screen fill the viewport */
+.home {
+  height: 100vh;
+  background-color: #bbb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title styling */
+.home__title {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Subtitle */
+.home__subtitle {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.75rem;
+  margin: 0.5rem 0 2rem;
+}
+
+/* Big neon-green oval button */
+.home__start-button {
+  background-color: #39ff14;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.2s;
+}
+.home__start-button:hover {
+  opacity: 0.9;
+}
+
+/* Placeholder for when the game starts: center it too */
+.game-placeholder {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #444;
+  font-size: 1.25rem;
+}
