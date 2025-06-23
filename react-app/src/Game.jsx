@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';import './Game.css';
 
-// helper to shuffle an array
 const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
 import img1 from './assets/1.png'
 import img2 from './assets/2.png'
@@ -135,7 +134,7 @@ export default function Game() {
       </header>
 
     <div
-    className={`cards-grid ${level}`}          // add the current level as a class
+    className={`cards-grid ${level}`}         
     style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
     >        {cards.map((card) => (
           <div
