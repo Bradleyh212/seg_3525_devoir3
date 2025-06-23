@@ -171,11 +171,12 @@ export default function Game() {
       <button className="restart-button" onClick={resetGame}>
         Restart
       </button>
+
       {isWon && (
         <div className="help-modal">           
           <div className="help-box">
-            <h3>🎉 Congrats, you won! 🎉</h3>
-            <button onClick={resetGame}>Play Again</button>
+            <h3>Congrats, you won!</h3>
+            <button onClick={resetGame}>Play Again!</button>
           </div>
        </div>
       )}
